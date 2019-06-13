@@ -37,8 +37,8 @@ sf_polygons <- lapply(1:nrow(sections), function(i) {
   section_lines <- dxf[sections[i,1] : sections[i,2]]
   
   #get the indices of the " 10" and " 20" rows, and add one to the index to drop down a line
-  x_lines <- which(stringr::str_detect(section_lines, " 10")) + 1
-  y_lines <- which(stringr::str_detect(section_lines, " 20")) + 1
+  x_lines <- which(section_lines == " 10") + 1
+  y_lines <- which(section_lines == " 20") + 1
   
   #get the values and cast to numeric
   y <- as.numeric(section_lines[y_lines])
