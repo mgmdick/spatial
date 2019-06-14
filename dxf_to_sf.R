@@ -29,7 +29,7 @@ sections <- data.frame(id_start = section_names, id_end = data.table::shift(sect
 
 #end of last section is given by length of file
 sections$id_end[nrow(sections)] <- length(dxf)
-
+sections <- sections[sections$names != "",]
 #for each row in the section
 sf_polygons <- lapply(1:nrow(sections), function(i) {
 
