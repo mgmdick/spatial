@@ -24,7 +24,7 @@ sections <- sections[sections$names != "",]
 
 #for each row in the section
 sf_polygons <- lapply(1:nrow(sections), function(i) {
-  i = 7
+
   #get the lines relevant to the section
   section_lines <- dxf[sections[i,1] : sections[i,2]]
   
